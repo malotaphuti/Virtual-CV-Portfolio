@@ -4,7 +4,17 @@ body {
     background-color: #000; /* Black background */
     color: #fff; /* White text color for contrast */
 }
-
+/*Background Image */
+.background {
+    background-color: #074f57;
+    background-image: url('assets/images/Profile_Picture.jpeg'); /* Ensure the path is correct */
+    background-size: cover;
+    color: white;
+    padding-top: 200px;
+    padding-bottom:200px;
+    height: 1000px;
+    
+}
 /* Container Styling */
 .container {
     max-width: 1200px;
@@ -66,8 +76,13 @@ main {
     max-width: 50%;
 }
 
-.home-content h2, .about-content h2 {
+.about-content h2 {
     color: #ffb400; /* Accent color */
+}
+
+.home-content h2{
+    color: #ffb400; /* Accent color */
+    margin-left: 500px;
 }
 
 .home-content h1, .about-content h1 {
@@ -109,7 +124,7 @@ main {
     margin-left: 30px;
     margin-right: 150px;
     margin-top: 10%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .about-content1 h2 {
