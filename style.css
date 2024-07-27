@@ -1326,3 +1326,54 @@ a:focus {
     outline: 2px solid #ffb400; /* Highlight links when focused */
 }
 
+#contact {
+    background-color: black; /* Background color for section */
+    padding: 20px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners for the section */
+    margin: 20px 0; /* Margin above and below the section */
+}
+
+#contact h2 {
+    text-align: center; /* Center-align the main header */
+    margin-bottom: 20px; /* Space below the main header */
+    color:white; /* Text color */
+}
+
+.contact-container {
+    text-align: center; /* Center-align text in the container */
+}
+
+.contact-container h2 {
+    margin: 10px 0; /* Space above and below the secondary header */
+    color: white; /* Text color */
+}
+
+.contact-container p {
+    color:white; /* Text color for paragraph */
+    margin: 5px 0; /* Space above and below paragraphs */
+}
+
+.contact-details {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center-align items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+}
+
+.contact-item {
+    background-color: #fff; /* Background color for each contact item */
+    border: 1px solid #ddd; /* Border around contact items */
+    border-radius: 4px; /* Rounded corners for contact items */
+    padding: 10px; /* Padding inside contact items */
+    margin: 10px; /* Margin around contact items */
+    flex: 1 1 200px; /* Flex properties to ensure responsiveness */
+}
+
+.contact-item h3 {
+    margin-top: 0; /* Remove top margin for subheadings */
+    color: #333; /* Text color for subheadings */
+}
+
+.contact-item p {
+    margin-bottom: 0; /* Remove bottom margin for paragraphs */
+    color: #555; /* Text color for paragraph */
+}
