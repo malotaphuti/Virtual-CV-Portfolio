@@ -103,6 +103,11 @@ main {
   white-space: nowrap; /* Prevents text wrapping */
 }
 
+.about-content1 p {
+  font-size: 18px;
+  margin-bottom: 36px; /* Space below the "About Me" paragraph */
+}
+
 
 .about-content h1 {
     font-size: 3000px;
