@@ -341,7 +341,7 @@ ul{list-style: none}
 #timeline ul li .cont
 {
   width: 200px;
-  height: 110px;
+  height: 300px;
   padding: 25px 10px 10px;
   border: 2px solid transparent;
   border-radius: 4px;
@@ -349,7 +349,7 @@ ul{list-style: none}
   transform: translate(0, -55px);
   text-transform: capitalize;
   line-height: 150%;
-  font-size: 80%;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   top: 22px
@@ -575,7 +575,7 @@ ul{list-style: none}
     padding: 15px;
     text-decoration: none;
     font-family: monospace;
-    font-size: 21px;
+    font-size: 26px;
 }
 
 
