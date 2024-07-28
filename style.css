@@ -89,10 +89,23 @@ main {
 .home-content h2{
     color: #ffb400; /* Accent color */
     margin-left: 500px;
+    font-size: 40px;
+}
+.home-content h1{
+  font-size: 40px;
+  margin: 10px 0;
+  margin-left: 500px;
 }
 
-.home-content h1, .about-content h1 {
-    font-size: 36px;
+.home-content p {
+  font-size: 25px;
+  margin-left: 400px;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+
+.about-content h1 {
+    font-size: 3000px;
     margin: 10px 0;
 }
 
@@ -135,6 +148,7 @@ main {
 
 .about-content1 h2 {
     color: #ffb400;
+    font-size: 40px;
 }
 
 .about-content h3 {
