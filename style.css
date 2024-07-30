@@ -7,7 +7,7 @@ body {
 /*Background Image */
 .background {
     background-color: #074f57;
-    background-image: url('assets/images/Profile_Picture.jpeg'); /* Ensure the path is correct */
+    background-image: url('assets/images/welcome.jpg'); /* Ensure the path is correct */
     background-size: cover;
     color: white;
     padding-top: 200px;
@@ -121,10 +121,57 @@ main {
     max-width: 400px; /* Adjust based on image size */
     border-radius: 10px;
     border: 2px solid #fff; /* White border for contrast */
-    margin-top: -150px;
+    margin-top: -300px;
     margin-bottom: -250px;
   
 
+}
+/*Adding Icons*/
+
+.about-container {
+    display: flex; /* Aligns children horizontally */
+    align-items: center; /* Vertically centers items */
+    margin-bottom: 10px; /* Adds space between items */
+}
+
+.about-container img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-right: 10px; /* Adds space between the image and text */
+    object-fit: contain; /* Ensures image scales correctly */
+}
+
+.about-container li {
+    list-style-type: none; /* Removes default bullet points */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+
+/*Resume Button*/
+
+.buttons .btn-resume{
+    border: 1px;
+    color: black;
+    background-color: yellow;
+    border-color: white;
+    border-radius: 35px;
+    padding: 20px;
+    text-decoration: none;
+    font-family: monospace;
+	margin-top: 600000%;
+	
+}
+button:hover {
+    background-color: orange; /* Slightly darker shade on hover */
+}
+.buttons
+{
+	padding: 60px;
+	margin-left: -250px;
+	margin-top: -20px;
+
+	
 }
 
 /* About Section Specific Styling */
@@ -149,6 +196,7 @@ main {
 .about-content1 h2 {
     color: #ffb400;
     font-size: 40px;
+	margin-top: -100px;
 }
 
 .about-content h3 {
@@ -211,30 +259,8 @@ main {
     }
 }
 
-/* Button Styling (if needed) */
-button {
-    background-color: #ffb400; /* Accent color */
-    color: #000; /* Text color */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 50px;
-}
-.buttons .btn-resume{
-    border: 1px;
-    color: black;
-    background-color: yellow;
-    border-color: white;
-    border-radius: 35px;
-    padding: 20px;
-    text-decoration: none;
-    font-family: monospace;
-}
-button:hover {
-    background-color: #e0a900; /* Slightly darker shade on hover */
-}
+
+
 
 /* Accessibility Enhancements */
 a:focus {
@@ -971,19 +997,7 @@ ul.skills li.more input:checked + label:hover {
 }
 
 /* Button Styling (if needed) */
-button {
-    background-color: #ffb400; /* Accent color */
-    color: #000; /* Text color */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-button:hover {
-    background-color: #e0a900; /* Slightly darker shade on hover */
-}
 
 /* Accessibility Enhancements */
 a:focus {
