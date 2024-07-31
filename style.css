@@ -303,44 +303,41 @@ a:focus {
 -------------------------------------*/
 
 /*Projects*/
-#projects {
-    padding: 50px 0;
-    text-align: center;
+
+.projects-heading {
+    text-align: left; /* Aligns the heading to the left */
+    font-size: 2em; /* Adjusts the font size */
+    margin-bottom: -100px; /* Adds space below the heading */
+    margin-left: 50%; /* Moves the heading to the center */
+    transform: translateX(-50%); /* Centers the heading */
 }
 
 .projects-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px; /* Adds space between projects */
 }
 
 .project {
-    width: 350px; /* Increased width */
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Adds space between image and description */
 }
 
 .project img {
-    width: 100%;
-    height: 350px; /* Set a specific height */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 700px; /* Increased width for better visibility */
+    height: auto; /* Maintains aspect ratio */
+    border: 2px solid #ccc; /* Optional: Adds a border around images */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
+
 }
 
-.project p {
-    margin: 10px 0 0;
+.project-description {
+    flex: 1; /* Allows the description to take up remaining space */
+    text-align: left; /* Aligns text to the left */
+    font-size: 16px; /* Adjusts font size */
+    color: #333; /* Adjusts text color */
 }
-
-.project:hover {
-    transform: scale(1.05);
-}
-
-
-
-
-
 
 /*******/
 /* MEDIA QUERIES */
@@ -718,12 +715,7 @@ ul.skills li.sk-pug { --per: 40; }
 	border-color: #ff4500;
 }
 
-label[for="sk1"] {
-	/*left: -10px;*/
-}
-label[for="sk2"] {
-	/*left: calc(34% - 6px);*/
-}
+
 
 
 label[for="sk1"]:before {
