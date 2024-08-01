@@ -135,8 +135,8 @@ main {
 }
 
 .about-container img {
-    width: 24px; /* Adjust size as needed */
-    height: 24px; /* Adjust size as needed */
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
     margin-right: 10px; /* Adds space between the image and text */
     object-fit: contain; /* Ensures image scales correctly */
 }
