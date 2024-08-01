@@ -117,7 +117,7 @@ main {
 }
 .about-image img
 {
-    max-width: 400px; /* Adjust based on image size */
+    max-width: 450px; /* Adjust based on image size */
     border-radius: 10px;
     border: 2px solid #fff; /* White border for contrast */
     margin-top: -300px;
@@ -1040,7 +1040,7 @@ a:focus {
     text-align: center; /* Center-align the main header */
     margin-bottom: 20px; /* Space below the main header */
     color: #ffb400; /* Change text color to yellow */
-    font-size: 40px; /* Increase font size to 40px */
+    font-size: 30px; /* Increase font size to 40px */
 }
 
 .contact-container {
