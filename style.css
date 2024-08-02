@@ -1024,12 +1024,6 @@ ul.skills li.more input:checked + label:hover {
     }
 }
 
-/* Button Styling (if needed) */
-
-/* Accessibility Enhancements */
-a:focus {
-    outline: 2px solid #ffb400; /* Highlight links when focused */
-}
 #contact {
     background-color: black; /* Background color for section */
     padding: 20px; /* Padding around the section */
@@ -1041,7 +1035,7 @@ a:focus {
     text-align: center; /* Center-align the main header */
     margin-bottom: 20px; /* Space below the main header */
     color: #ffb400; /* Change text color to yellow */
-    font-size: 30px; /* Increase font size to 30px */
+    font-size: 30px; /* Increase font size */
 }
 
 .contact-container {
@@ -1069,9 +1063,14 @@ a:focus {
     background-color: #fff; /* Background color for each contact item */
     border: 1px solid #ddd; /* Border around contact items */
     border-radius: 4px; /* Rounded corners for contact items */
-    padding: 5px; /* Reduced padding inside contact items */
-    margin: 5px; /* Reduced margin around contact items */
+    padding: 10px; /* Padding inside contact items */
+    margin: 10px; /* Margin around contact items */
     flex: 1 1 200px; /* Flex properties to ensure responsiveness */
+    max-width: 400px; /* Limit the width of each contact item */
+}
+
+.contact-email {
+    max-width: 500px; /* Increase the max-width for the email section */
 }
 
 .contact-item h3 {
