@@ -8,6 +8,8 @@
     
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         
     </style>
@@ -16,8 +18,10 @@
 <body>
     <header>
         <div class="container">
-        <nav>
-                <ul>
+            <h1>Portfolio</h1>
+            <nav class="nav-menu" id="nav-menu-id">
+                <i class="fa fa-times" id="close-btn"></i>
+                <ul class="menu-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
@@ -27,6 +31,10 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+
+            <i class="fa fa-bars" id="menu-open" aria-hidden="true"></i>
+
+      
         </div>
     </header>
     <main>
@@ -294,6 +302,8 @@
         </p>
     </div>
 </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
