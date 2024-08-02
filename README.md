@@ -8,7 +8,7 @@ Community and Support: Large developer community and comprehensive documentation
 Innovation
 The portfolio showcases my technical skills, creativity, and attention to detail:
 
-Responsive Layout: Optimized for all devices.
+
 Appealing Design: Polished, clean appearance with consistent typography.
 Engaging Components: Fixed navigation menu and interactive hover effects.
 Web Technologies
