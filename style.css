@@ -90,12 +90,14 @@ main {
   font-size: 40px;
   margin: 10px 0;
   margin-left: 500px;
+   color: #ffb400;
 }
 
 .home-content p {
   font-size: 25px;
   margin-left: 400px;
   white-space: nowrap; /* Prevents text wrapping */
+  color: #ffb400;
 }
 
 .about-content1 p {
@@ -345,7 +347,7 @@ a:focus {
 }
 
 .project img {
-    width: 700px; /* Increased width for better visibility */
+    width: 460px; /* Increased width for better visibility */
     height: auto; /* Maintains aspect ratio */
     border: 2px solid #ccc; /* Optional: Adds a border around images */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
@@ -1028,7 +1030,6 @@ ul.skills li.more input:checked + label:hover {
 a:focus {
     outline: 2px solid #ffb400; /* Highlight links when focused */
 }
-
 #contact {
     background-color: black; /* Background color for section */
     padding: 20px; /* Padding around the section */
@@ -1040,7 +1041,7 @@ a:focus {
     text-align: center; /* Center-align the main header */
     margin-bottom: 20px; /* Space below the main header */
     color: #ffb400; /* Change text color to yellow */
-    font-size: 30px; /* Increase font size to 40px */
+    font-size: 30px; /* Increase font size to 30px */
 }
 
 .contact-container {
@@ -1068,21 +1069,18 @@ a:focus {
     background-color: #fff; /* Background color for each contact item */
     border: 1px solid #ddd; /* Border around contact items */
     border-radius: 4px; /* Rounded corners for contact items */
-    padding: 10px; /* Padding inside contact items */
-    margin: 10px; /* Margin around contact items */
+    padding: 5px; /* Reduced padding inside contact items */
+    margin: 5px; /* Reduced margin around contact items */
     flex: 1 1 200px; /* Flex properties to ensure responsiveness */
 }
 
 .contact-item h3 {
     margin-top: 0; /* Remove top margin for subheadings */
     color: #333; /* Text color for subheadings */
-	font-size: 20px;
+    font-size: 20px;
 }
 
 .contact-item p {
     margin-bottom: 0; /* Remove bottom margin for paragraphs */
-    color: #555;/* Text color for paragraph */
-	
+    color: #555; /* Text color for paragraph */
 }
-
-
