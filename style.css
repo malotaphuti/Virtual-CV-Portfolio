@@ -993,12 +993,83 @@ ul.skills li.more input:checked + label:hover {
     margin: 0;
 }
 
+#menu-open{
+    /** leave open */
+    cursor: pointer;
+    display: none;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#close-btn{
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .home-section, .about-section, .education-section, .work-experience-section {
         flex-direction: column;
         text-align: center;
     }
+
+    .nav-menu{
+        display: none;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background-color: #000;
+        color: #fff;
+    }
+
+    #nav-menu-id{
+        display: none;
+    }
+
+    #close-btn{
+        cursor: pointer;
+    }
+
+    .menu-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: right;
+        gap: 20px;
+    }
+
+    .nav-menu.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    #menu-open{
+        /** leave open */
+        cursor: pointer;
+        display: block;
+    }
+
 
     .home-content, .about-content {
         max-width: 100%;
