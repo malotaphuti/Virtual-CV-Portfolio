@@ -999,10 +999,10 @@ ul.skills li.more input:checked + label:hover {
     display: none;
 }
 
-.container{
+.header-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #close-btn{
@@ -1058,7 +1058,7 @@ ul.skills li.more input:checked + label:hover {
         color: #fff;
     }
 
-    .container{
+    .header-container{
         display: flex;
         justify-content: space-between;
         position: relative;
