@@ -1,310 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        
-    </style>
-   
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <nav class="nav-menu" id="nav-menu-id">
-                <i class="fa fa-times" id="close-btn"></i>
-                <ul class="menu-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Work Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <i class="fa fa-bars" id="menu-open" aria-hidden="true"></i>
-
-      
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Phuti Malota</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Phuti Malota</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </header>
-    <main>
-        <section id="home" class="home-section background">
-            <div class="home-content">
-                <h2>HI, I A M</h2>
-                <h1>MALOTA PHUTI</h1>
-                <p>A Final Year BSc I.T Student at North West University</p>
-            </div>
-            
-            
-            
-        </section>
-        <section id="about" class="about-section">
-            <div class="about-image">
-                <img src="assets\images\Profile_Picture.jpeg" alt="CHIEF">
-            </div>
-            <div class="about-content1">
-                <h2>About Me</h2>
-                <p>I am a highly motivated final year BSc I.T student at North West University with a passion for <br>software engineering and data analysis.
-                    I enjoy solving complex problems and delivering innovative IT solutions.
-                     I am eager to learn and enhance my skills to contribute effectively to the tech industry.</p>
-                <h3>Personal Information</h3>
-                <ul>
-                    <div class="about-container">
-                        <img src="assets\images\FName_Icon.png" alt="">
-                        <li><strong>First Name:</strong>  Samuel Phuti</li><br> 
-                    </div>
-                    <div class="about-container">
-                        <img src="assets\images\surname_icon.png" alt="">
-                        <li><strong>Surname:</strong>  Malota</li><br> 
-                    </div>
-                    <div class="about-container">
-                        <img src="assets\images\DOB_icon.png" alt="">
-                        <li><strong>Date of Birth:</strong>  02-April-2003</li><br> 
-                    </div>
-                    <div class="about-container">
-                        <img src="assets\images\icons8-address-96.png" alt="">
-                        <li><strong>Address:</strong>  Potchefstroom</li><br> 
-                    </div>
-                    <div class="about-container">
-                        <img src="assets\images\postal_address_icon.png" alt="">
-                        <li><strong>Postal Code:</strong>  2520</li><br> 
-                    </div>
-                    <div class="about-container">
-                        <img src="assets\images\email_icon.png" alt="">
-                        <li><strong>Email:</strong> <a href="email">  malotaphuti@gmail.com</a></li>
-                    </div>
-                   
-                   </ul>
-                <div class="buttons">
-                    <a href="assets\images\Malota_SP_CV.pdf"  class="btn-resume" style="margin-left: 200px;">Download CV</a>
-                </div>
-                
-        </section>
-        <section id="education" class="education-section">
-            <div class="container" style="padding: 100px;">
-                <h2 id="education">Education</h2>
-                <div class="education-item">
-                    <h3>NORTH WEST UNIVERSITY</h3>
-                    <span>Bachelor of Science in Information Technology</span>
-                    <span>2022- Present</span>
-                    <p>Relevant coursework: Systems Analysis and Design, Data Analytics, Database Systems, Web Development,Data Structures and  Algorithms .</p>
-                </div>
-                <div class="education-item">
-                    <h3>SERITARITA HIGH SCHOOL</h3>
-                    <span>NATIONAL SENIOR CERTIFICATE</span>
-                    <span>2017 - 2021</span>
-                    <p>Relevant coursework: Mathematics, Physics, Life Sciences, Geography, Life-Orientation, Sepedi, English.</p>
-                </div>
-                </div>
-            </div>
-        </section>
-        <section id="experience" class="work-experience-section">
-            <div class="container" style="padding: 60px;">
-                <div class="section">
-                    <h2 class="section-title">Work Experience</h2>
-                    
-                    <div class="work-experience-item">
-                        <h3 class="item-title">Student Assistant</h3>
-                        <span class="item-subtitle">17 Jul, 2023 - 1 Nov, 2023</span>
-                        <p class="item-text">
-                            Assisted with CMPG 122 (Graphical User Interface) module for first-year students presented in C#. Played a role in assisting students complete their practical assignments and marking.
-                        </p>
-                    </div>
-                    
-                    <div class="work-experience-item">
-                        <h3 class="item-title">Data Analyst Virtual Intern</h3>
-                        <span class="item-subtitle">10 July, 2024 - Present</span>
-                        <p class="item-text">
-                            Utilized Python and Anaconda for data analysis tasks including data exploration and visualization. Worked with libraries such as Pandas, NumPy, Matplotlib, and Seaborn to handle, process, and visualize datasets. Developed insightful visualizations to identify trends and patterns.
-                        </p>
-                    </div>
-                    
-                    <div class="work-experience-item">
-                        <h3 class="item-title">Student Assistant</h3>
-                        <span class="item-subtitle">16 July 2024 - Present</span>
-                        <p class="item-text">
-                            Assisting students complete their practicals,marking and test invigilation.
-                        </p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        
-        
-                <!-- End Timeline -->
-            </div>
-        </section>
-        <section id="skills" class="skills-section" style="padding: -300px">
-            <div class="content" style="margin: auto;">
-                <div class="profile-skills">
-                    <div>
-                        <input type="checkbox" id="sk1">
-                        <label for="sk1"></label>
-                        <ul class="skills skills1">
-                            <li class="sk-cms"><span>Communication Skills</span></li>
-                            <li class="sk-dtb"><span>Analytical Thinking</span></li>
-                            <li class="sk-dis"><span>DBMS</span></li>
-                            <li class="sk-pro"><span>Programing</span></li>
-                            <li class="sk-ani"><span>Data Analytics</span></li>
-                            <li class="more">
-                                <input type="checkbox" id="more-con"><label for="more-con"></label>
-                                <div><span>PHOTO</span><span>API</span><span>MAPS</span><span>VIDEO</span><span>CHARTS</span><span>RWD</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="sk2">
-                        <label for="sk2"></label>
-                        <ul class="skills skills2">
-                            <li class="sk-gim"><span>VS Code</span></li>
-                            <li class="sk-ado"><span>Cisco Packet Tracer</span></li>
-                            <li class="sk-not"><span>Oracle SQL Developer</span></li>
-                            <li class="sk-tri"><span>Anaconda</span></li>
-                            <li class="sk-wor"><span>GitHub</span></li>
-                            <li class="more">
-                                <input type="checkbox" id="more-pro"><label for="more-pro"></label>
-                                <div><span>JOOMLA</span><span>DRUPAL</span><span>JIRA</span><span>TRELLO</span><span>FILEZILLA</span><span>GIT</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="sk3">
-                        <label for="sk3"></label>
-                        <ul class="skills skills3">
-                            <li class="sk-css"><span>Python</span></li>
-                            <li class="sk-htm"><span>HTML</span></li>
-                            <li class="sk-jav"><span>C#</span></li>
-                            <li class="sk-php"><span>Java</span></li>
-                            <li class="sk-sql"><span>SQL</span></li>
-                            <li class="more">
-                                <input type="checkbox" id="more-len"><label for="more-len"></label>
-                                <div><span>XHTML</span><span>XSL</span><span>XML</span><span>JSON</span><span>PUG</span><span>SASS</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2 class="projects-heading">Projects</h2>
-            <div class="projects-container" style="padding: 120px;">
-                <div class="project">
-                    <img src="assets\images\Beelte_Cafe.png" alt="Project 1">
-                    <p class="project-description">Beetle Cafe System: A comprehensive management system built with C# and ASP.NET to streamline cafe operations. Features include order and customer relationship management</p>
-                </div>
-                
-                <div class="project">
-                    <img src="assets\images\Encryption_Project.png" alt="Project 2">
-                    <p class="project-description">This project involves developing an encryption tool that allows users to encrypt and decrypt files using either the AES algorithm or a custom algorithm. The tool features options for generating encryption keys and selecting different security levels, providing a user-friendly interface for managing the encryption process.</p>
-                </div>
-                <div class="project">
-                    <img src="assets/images/Youtuber_Insights.png" alt="Project 3">
-                    <p class="project-description">YouTuber Insights and Data Analysis: This project is centered around performing data analysis and generating insights on YouTubers and streamers using Python libraries and the Anaconda tool. The project involves collecting data from various sources, cleaning and preprocessing the data, and then using Python libraries such as Pandas, NumPy,Matplotlib and Seaborn to analyze the data. The analysis includes metrics like subscriber growth, view counts, engagement rates, and content performance. The insights generated from this analysis help in understanding trends, identifying successful content strategies, and making data-driven decisions. The project also includes visualizations to present the findings in an easily understandable format, making it valuable for content creators and marketers looking to optimize their YouTube strategies.</p>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-container">
-                <h2>MALOTA PHUTI</h2>
-                <p>Junior software developer/data analyst</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p>069-987-6241</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p>malotaphuti@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    </main>
-    <!-- component -->
-<!-- Foooter -->
-<section class="bg-black">
-    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-            <div class="px-5 py-2">
-                <a href="#home" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Home
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#about" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    About
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#education" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Education
-                </a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="#experience" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Experience
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#skills" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Skills
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#projects" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Projects
-                </a>
-            </div>
-            
-        </nav>
-        <div class="flex justify-center mt-8 space-x-6">
-           
-            
-            <a href="https://x.com/home" class="text-white-400 hover:text-gray-500">
-                <span class="sr-only">Twitter</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                </svg>
-            </a>
-            <a href="https://github.com/malotaphuti" class="text-white-400 hover:text-gray-500">
-                <span class="sr-only">GitHub</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-white-400 hover:text-gray-500" aria-label="LinkedIn">
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46C0 23.21.79 24 1.77 24h20.46c.98 0 1.77-.79 1.77-1.77V1.77C24 .79 23.21 0 22.23 0zm-14.2 20.45h-3.56v-10.7h3.56v10.7zm-1.78-12.21a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm12.54 12.21h-3.56v-5.93c0-1.41-.03-3.22-1.97-3.22-1.97 0-2.27 1.54-2.27 3.13v6.02h-3.56v-10.7h3.42v1.46h.05c.48-.91 1.65-1.87 3.4-1.87 3.64 0 4.32 2.4 4.32 5.53v6.58z"/>
-                </svg>
-            </a>
-            
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
-        <p class="mt-8 text-base leading-6 text-center text-gray-400">
-            © 2024 created by Malota Phuti, Inc. All rights reserved.
-        </p>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="assets\images\SP_PP.jpeg" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Phuti Malota</h1>
+        <p class="section__text__p2">Aspiring Data Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('assets/Malota_SP_CV.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="assets\images\linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/phuti-s-malota-8595a5315/'"
+          />
+          <img
+            src="assets\images\github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/malotaphuti'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="assets\images\Profile_Picture.jpeg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="assets\crt icon.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Certifications</h3>
+              <p>Intern Career <br />Data Analyst</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="assets\educa.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>
+                National Senior Certificate<br />
+                BSc in Information Technology<br />
+                BSc (Hons) in Computer Science and Information Technology candidate
+              </p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+               Motivated BSc Honours candidate in computer science and information technology, with hands on
+ experience in software and web development and a strong passion for data science. Proficient in Python,
+ Java, and SQL, with practical knowledge in Django and ASP.NET framework. Eager to expand and apply
+ technical skills through innovative projects in collaborative environments. Combines proactive independence
+ with strong teamwork, ensuring high standards of efficiency and project delivery
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section id="experience">
+  <p class="section__text__p1">My Professional Journey</p>
+  <h1 class="title">Experience</h1>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Mar 2025 - Nov 2025</div>
+      <div class="timeline-content">
+        <h2>Student Assistant</h2>
+        <h4>North West University</h4>
+        <ul>
+          <li>Assisting final-year BSc IT students with Cisco Packet Tracer, guiding them in applying networking concepts through simulations.</li>
+          <li>Grading assignments,class tests including invigilating class tests</li>
+        </ul>
+      </div>
     </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Jul 2024 - Aug 2024</div>
+      <div class="timeline-content">
+        <h2>Virtual Data Analyst Intern</h2>
+        <h4>Intern Career</h4>
+        <ul>
+          <li>analyzed datasets to identify trends and insights using Power BI and Anaconda</li>
+          <li>Designed and built interactive dashboards to visualize key metrics.</li>
+          <li>Cleaned, transformed, and structured raw data for accurate reporting.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Jul 2023- Nov 2023</div>
+      <div class="timeline-content">
+        <h2>Student Assistant</h2>
+        <h4>North West University</h4>
+        <ul>
+          <li>Assisted with CMPG 122(Graphical User Interface) module for first year students presented in C#</li>
+          <li>Facilitated lab sessions and provided technical guidance during</li>
+      
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
-
+    <section id="skills">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development and Codes</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="assets\html icon.jpg"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\css icon.jpg"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\tailswind.jpg"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Tailswind</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\js icon.webp"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\c sharp.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>C#</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\python icon.jpg"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend Development and Tools</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="assets\postgre.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PostgreSQL</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\dj.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python Django</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\azure icon.jpg"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Microsoft Azure</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="assets\sql icon.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>SQL</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\enc.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <p class="project-description">
+                A web-based encryption tool that allows users to securely encrypt and decrypt messages using custom algorithms.
+              </p>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\share.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <div class="btn-container">
+              <p class="project-description">
+                A collaborative platform for sharing educational content, with user friendly document uploads, moderation, and subject based navigation built on a scalable backend with responsive design
+              </p>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\images\Fixture Management.jpeg"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <p class="project-description">
+                A fixture management system for organizing and tracking sports events, teams, and schedules efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="assets\images\email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:malotaphuti@gmail.com">malotaphuti@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="assets\images\linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Phuti Malota. All Rights Reserved.</p>
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
-
-
