@@ -1,390 +1,905 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Phuti Malota | Graduate Software Developer</title>
+    <meta name="description" content="Phuti Malota - Graduate Software Developer specializing in Full-Stack Development, Cloud Solutions, Data Engineering, and Machine Learning. BSc Honours in CS & IT." />
+    <meta name="keywords" content="Software Developer, Full-Stack, Angular, Spring Boot, Python, Azure, Django, Machine Learning, Data Engineering" />
+    <meta name="author" content="Phuti Malota" />
+    <meta property="og:title" content="Phuti Malota | Graduate Software Developer" />
+    <meta property="og:description" content="Graduate Software Developer specializing in Full-Stack Development, Cloud Solutions, and Machine Learning." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0a1a" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSNEX9E9B5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BSNEX9E9B5');
     </script>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Phuti Malota</div>
-      <div>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+      <div class="loader-content">
+        <div class="loader-logo">PM<span class="loader-dot">.</span></div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <header id="header">
+      <nav id="navbar" class="glass-nav">
+        <a href="#" class="nav-logo">PM<span class="accent-dot">.</span></a>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Phuti Malota</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="assets\images\SP_PP.jpeg" alt="John Doe profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Phuti Malota</h1>
-        <p class="section__text__p2">Aspiring Software Engineer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('assets/Malota_SP_CV.pdf')"
-          >
-            Download CV
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
           </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="assets\images\linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/phuti-s-malota-8595a5315/'"
-          />
-          <img
-            src="assets\images\github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/malotaphuti'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="assets\images\Profile_Picture.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="assets\crt icon.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Certifications</h3>
-              <p>Intern Career <br />Data Analyst</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="assets\educa.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>
-                National Senior Certificate<br />
-                BSc in Information Technology<br />
-                BSc (Hons) in Computer Science and Information Technology candidate
-              </p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-               Motivated BSc Honours candidate in computer science and information technology, with hands on
- experience in software and web development and a strong passion for data science. Proficient in Python,
- Java, and SQL, with practical knowledge in Django and ASP.NET framework. Eager to expand and apply
- technical skills through innovative projects in collaborative environments. Combines proactive independence
- with strong teamwork, ensuring high standards of efficiency and project delivery
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  <section id="experience">
-  <h1 class="title">Experience</h1>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">Mar 2025 - Nov 2025</div>
-      <div class="timeline-content">
-        <h2>Student Assistant</h2>
-        <h4>North West University</h4>
-        <ul>
-          <li>Assisting final-year BSc IT students with Cisco Packet Tracer, guiding them in applying networking concepts through simulations.</li>
-          <li>Grading assignments,class tests including invigilating class tests</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">Jul 2024 - Aug 2024</div>
-      <div class="timeline-content">
-        <h2>Virtual Data Analyst Intern</h2>
-        <h4>Intern Career</h4>
-        <ul>
-          <li>Cleaned, transformed, and structured raw data for accurate reporting.</li>
-          <li>Designed and built interactive dashboards to visualize key metrics.</li>
-          <li>analyzed datasets to identify trends and insights using Power BI and Anaconda.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">Jul 2023- Nov 2023</div>
-      <div class="timeline-content">
-        <h2>Student Assistant</h2>
-        <h4>North West University</h4>
-        <ul>
-          <li>Assisted with CMPG 122(Graphical User Interface) module for first year students presented in C#</li>
-          <li>Facilitated lab sessions and provided technical guidance during</li>
-      
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-    <section id="skills">
-      <h1 class="title">Skills</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend and Codes</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assets\html icon.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\css icon.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\tailswind.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Tailswind</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\js icon.webp"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\c sharp.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C#</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\python icon.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend and Tools</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assets\postgre.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\dj.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python Django</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\azure icon.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Microsoft Azure</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assets\jupyter.jpg"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Jupyter</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets\enc.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <p class="project-description">
-                A web-based encryption tool that allows users to securely encrypt and decrypt messages using custom algorithms.
-              </p>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets\share.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <p class="project-description">
-                A collaborative platform for sharing educational content, with user friendly document uploads, moderation, and subject based navigation built on a scalable backend with responsive design
-              </p>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets\images\Fixture Management.jpeg"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <p class="project-description">
-                A fixture management system for organizing and tracking sports events, teams, and schedules efficiently.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="assets\images\email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:malotaphuti@gmail.com">malotaphuti@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="assets\images\linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2024 Phuti Malota. All Rights Reserved.</p>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="status-dot"></span> Available for opportunities
+          </div>
+          <h1 class="hero-name">
+            <span class="hero-greeting">Hello, I'm</span>
+            <span class="hero-name-text">Phuti Malota</span>
+          </h1>
+          <div class="hero-title-wrapper">
+            <span class="hero-title-prefix">I build </span>
+            <span class="typed-text" id="typed-text"></span>
+            <span class="typed-cursor">|</span>
+          </div>
+          <p class="hero-description">
+            Graduate Software Developer passionate about crafting scalable full-stack applications, 
+            cloud-native solutions, and data-driven systems. Transforming complex problems into elegant code.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="assets/Malota_SP_CV.pdf" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-paper-plane"></i> Let's Connect
+            </a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/malotaphuti" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="hero-ring hero-ring-1"></div>
+            <div class="hero-ring hero-ring-2"></div>
+            <div class="hero-ring hero-ring-3"></div>
+            <div class="hero-image-glow"></div>
+            <img src="assets/images/SP_PP.jpeg" alt="Phuti Malota" class="hero-image" />
+          </div>
+          <div class="floating-tech floating-tech-1"><i class="fa-brands fa-python"></i></div>
+          <div class="floating-tech floating-tech-2"><i class="fa-brands fa-angular"></i></div>
+          <div class="floating-tech floating-tech-3"><i class="fa-brands fa-microsoft"></i></div>
+          <div class="floating-tech floating-tech-4"><i class="fa-solid fa-database"></i></div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span>Scroll Down</span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-user"></i> Get to know me</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-image-col reveal-left">
+            <div class="about-image-wrapper">
+              <div class="about-image-border"></div>
+              <img src="assets/images/Profile_Picture.jpeg" alt="Phuti Malota" class="about-image" />
+            </div>
+          </div>
+          <div class="about-content-col reveal-right">
+            <div class="about-cards-row">
+              <div class="about-card glass-card">
+                <div class="about-card-icon gradient-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3>Full-Stack Developer</h3>
+                <p>Angular, Spring Boot, Django, .NET</p>
+              </div>
+              <div class="about-card glass-card">
+                <div class="about-card-icon gradient-icon">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h3>Cloud & Data</h3>
+                <p>Azure, Power BI, PostgreSQL</p>
+              </div>
+              <div class="about-card glass-card">
+                <div class="about-card-icon gradient-icon">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Deep Learning, CBAM, CNN Research</p>
+              </div>
+            </div>
+            <div class="about-text">
+              <p>
+                I'm a <strong>Graduate Software Developer</strong> and BSc Honours candidate in Computer Science & Information Technology 
+                with hands-on experience across the full software development lifecycle. My expertise spans 
+                <strong>full-stack development</strong> with Angular and Spring Boot, <strong>cloud solutions</strong> on Microsoft Azure, 
+                and <strong>data engineering</strong> with Python and Power BI.
+              </p>
+              <p>
+                Currently researching <strong>maize disease classification</strong> using Deep Learning and Convolutional Block 
+                Attention Modules (CBAM), pushing the boundaries of agricultural AI. I thrive in collaborative environments 
+                where I can architect scalable solutions and deliver high-quality software.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Career Journey</span>
+          <h2 class="section-title">Experience</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-line-vertical"></div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot pulse"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2025 - Present</span>
+                <span class="timeline-badge current">Current</span>
+              </div>
+              <h3 class="timeline-role">Graduate Software Developer</h3>
+              <h4 class="timeline-company"><i class="fa-solid fa-building"></i> Adapt IT</h4>
+              <ul class="timeline-responsibilities">
+                <li>Developing and maintaining full-stack enterprise applications using Angular and Spring Boot.</li>
+                <li>Building RESTful APIs and microservices for scalable business solutions.</li>
+                <li>Collaborating with cross-functional teams in Agile/Scrum environments.</li>
+                <li>Implementing cloud-native solutions on Microsoft Azure.</li>
+              </ul>
+              <div class="timeline-tech-stack">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Azure</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Mar 2025 - Nov 2025</span>
+              </div>
+              <h3 class="timeline-role">Student Assistant</h3>
+              <h4 class="timeline-company"><i class="fa-solid fa-university"></i> North West University</h4>
+              <ul class="timeline-responsibilities">
+                <li>Guided final-year BSc IT students with Cisco Packet Tracer networking simulations.</li>
+                <li>Graded assignments and class tests, including invigilation duties.</li>
+              </ul>
+              <div class="timeline-tech-stack">
+                <span class="tech-badge">Cisco Packet Tracer</span>
+                <span class="tech-badge">Networking</span>
+                <span class="tech-badge">Mentoring</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Jul 2024 - Aug 2024</span>
+              </div>
+              <h3 class="timeline-role">Virtual Data Analyst Intern</h3>
+              <h4 class="timeline-company"><i class="fa-solid fa-building"></i> Intern Career</h4>
+              <ul class="timeline-responsibilities">
+                <li>Cleaned, transformed, and structured raw data for accurate reporting.</li>
+                <li>Designed interactive dashboards to visualize key business metrics.</li>
+                <li>Analyzed datasets to identify trends using Power BI and Anaconda.</li>
+              </ul>
+              <div class="timeline-tech-stack">
+                <span class="tech-badge">Power BI</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Anaconda</span>
+                <span class="tech-badge">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Jul 2023 - Nov 2023</span>
+              </div>
+              <h3 class="timeline-role">Student Assistant</h3>
+              <h4 class="timeline-company"><i class="fa-solid fa-university"></i> North West University</h4>
+              <ul class="timeline-responsibilities">
+                <li>Assisted with CMPG 122 (GUI Development) module for first-year students in C#.</li>
+                <li>Facilitated lab sessions and provided technical guidance.</li>
+              </ul>
+              <div class="timeline-tech-stack">
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">Windows Forms</span>
+                <span class="tech-badge">Teaching</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-code"></i> Technical Expertise</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="skills-categories">
+          <div class="skill-category glass-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon gradient-icon"><i class="fa-solid fa-palette"></i></div>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-angular"></i> Angular</span>
+                  <span class="skill-bar-percent">85%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-html5"></i> HTML5</span>
+                  <span class="skill-bar-percent">95%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                  <span class="skill-bar-percent">90%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-js"></i> JavaScript</span>
+                  <span class="skill-bar-percent">75%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                  <span class="skill-bar-percent">80%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon gradient-icon"><i class="fa-solid fa-server"></i></div>
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-java"></i> Spring Boot</span>
+                  <span class="skill-bar-percent">80%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-python"></i> Django</span>
+                  <span class="skill-bar-percent">75%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-python"></i> Python</span>
+                  <span class="skill-bar-percent">90%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-hashtag"></i> C#</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-code"></i> ASP.NET</span>
+                  <span class="skill-bar-percent">65%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-cube"></i> REST APIs</span>
+                  <span class="skill-bar-percent">85%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon gradient-icon"><i class="fa-solid fa-cloud"></i></div>
+              <h3>Cloud & DevOps</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</span>
+                  <span class="skill-bar-percent">75%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-code-branch"></i> Git</span>
+                  <span class="skill-bar-percent">85%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-github"></i> GitHub</span>
+                  <span class="skill-bar-percent">85%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-gear"></i> CI/CD</span>
+                  <span class="skill-bar-percent">60%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon gradient-icon"><i class="fa-solid fa-database"></i></div>
+              <h3>Data & Databases</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-chart-line"></i> Power BI</span>
+                  <span class="skill-bar-percent">80%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-table"></i> SQL</span>
+                  <span class="skill-bar-percent">80%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-python"></i> Pandas</span>
+                  <span class="skill-bar-percent">75%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-flask-vial"></i> Jupyter</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon gradient-icon"><i class="fa-solid fa-robot"></i></div>
+              <h3>Machine Learning</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-brain"></i> Deep Learning</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+                  <span class="skill-bar-percent">65%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-network-wired"></i> CNN</span>
+                  <span class="skill-bar-percent">70%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-solid fa-microscope"></i> CBAM</span>
+                  <span class="skill-bar-percent">65%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span class="skill-bar-name"><i class="fa-brands fa-python"></i> TensorFlow</span>
+                  <span class="skill-bar-percent">60%</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-rocket"></i> My Work</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="data">Data</button>
+          <button class="filter-btn" data-filter="security">Security</button>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card glass-card reveal-up" data-category="security">
+            <div class="project-image-wrapper">
+              <img src="assets/enc.png" alt="Encryption Tool Project" class="project-image" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/malotaphuti" target="_blank" class="project-link-btn" aria-label="View source code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Encryption Tool</h3>
+              <p class="project-description">
+                A web-based encryption tool enabling users to securely encrypt and decrypt messages using custom algorithms. 
+                Built with a focus on security and usability.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Cryptography</span>
+                <span>Web Security</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card reveal-up" data-category="fullstack">
+            <div class="project-image-wrapper">
+              <img src="assets/share.png" alt="Content Sharing Platform" class="project-image" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/malotaphuti" target="_blank" class="project-link-btn" aria-label="View source code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Content Sharing Platform</h3>
+              <p class="project-description">
+                A collaborative platform for sharing educational content with document uploads, moderation, 
+                and subject-based navigation built on a scalable backend with responsive design.
+              </p>
+              <div class="project-tech">
+                <span>Django</span>
+                <span>PostgreSQL</span>
+                <span>REST API</span>
+                <span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card reveal-up" data-category="fullstack">
+            <div class="project-image-wrapper">
+              <img src="assets/images/Fixture Management.jpeg" alt="Fixture Management System" class="project-image" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/malotaphuti" target="_blank" class="project-link-btn" aria-label="View source code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Fixture Management System</h3>
+              <p class="project-description">
+                A comprehensive fixture management system for organizing and tracking sports events, teams, 
+                and schedules efficiently with real-time updates.
+              </p>
+              <div class="project-tech">
+                <span>C#</span>
+                <span>ASP.NET</span>
+                <span>SQL Server</span>
+                <span>MVC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card reveal-up" data-category="data">
+            <div class="project-image-wrapper">
+              <div class="project-image project-placeholder">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/malotaphuti" target="_blank" class="project-link-btn" aria-label="View source code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Maize Disease Classifier</h3>
+              <p class="project-description">
+                Deep Learning research project using CBAM-enhanced CNNs for automated classification of maize leaf diseases, 
+                contributing to agricultural AI innovation.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>CBAM</span>
+                <span>CNN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Research Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Journey</span>
+          <h2 class="section-title">Education & Research</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="education-grid">
+          <div class="education-card glass-card reveal-up">
+            <div class="education-icon gradient-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="education-year">2025</div>
+            <h3>BSc (Hons) Computer Science & IT</h3>
+            <h4>North West University</h4>
+            <p>Honours candidate specializing in Machine Learning and Computer Vision research.</p>
+            <div class="education-highlight">
+              <i class="fa-solid fa-microscope"></i> Research Focus: Maize Disease Classification using Deep Learning & CBAM
+            </div>
+          </div>
+          <div class="education-card glass-card reveal-up">
+            <div class="education-icon gradient-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="education-year">2024</div>
+            <h3>BSc Information Technology</h3>
+            <h4>North West University</h4>
+            <p>Completed with strong foundations in software engineering, databases, networking, and systems design.</p>
+            <div class="education-highlight">
+              <i class="fa-solid fa-star"></i> MultiChoice Bursary Recipient
+            </div>
+          </div>
+          <div class="education-card glass-card reveal-up">
+            <div class="education-icon gradient-icon">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="education-year">2021</div>
+            <h3>National Senior Certificate</h3>
+            <h4>High School Graduate</h4>
+            <p>Achieved the academic foundation for pursuing a career in technology and computer science.</p>
+          </div>
+        </div>
+
+        <div class="research-highlight glass-card reveal-up">
+          <div class="research-content">
+            <h3><i class="fa-solid fa-flask"></i> Current Research</h3>
+            <h4>Maize Disease Classification Using Deep Learning and CBAM</h4>
+            <p>
+              Investigating the application of Convolutional Block Attention Modules (CBAM) integrated into CNN architectures 
+              for improved accuracy in automated plant disease detection. This research contributes to precision agriculture 
+              and food security through AI-driven solutions.
+            </p>
+            <div class="research-tags">
+              <span>Deep Learning</span>
+              <span>Computer Vision</span>
+              <span>CBAM</span>
+              <span>CNN</span>
+              <span>Agricultural AI</span>
+              <span>TensorFlow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-trophy"></i> Recognition</span>
+          <h2 class="section-title">Achievements</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card glass-card reveal-up">
+            <div class="achievement-icon">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <h3>MultiChoice Bursary</h3>
+            <p>Awarded the prestigious MultiChoice bursary for academic excellence and potential in the technology sector.</p>
+          </div>
+          <div class="achievement-card glass-card reveal-up">
+            <div class="achievement-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Data Analyst Certification</h3>
+            <p>Completed virtual internship as Data Analyst, gaining hands-on experience in business intelligence and analytics.</p>
+          </div>
+          <div class="achievement-card glass-card reveal-up">
+            <div class="achievement-icon">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <h3>Honours Research</h3>
+            <p>Conducting original research in Deep Learning for agricultural disease detection using advanced attention mechanisms.</p>
+          </div>
+          <div class="achievement-card glass-card reveal-up">
+            <div class="achievement-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Teaching & Mentoring</h3>
+            <p>Multiple student assistant roles, mentoring hundreds of students in programming and networking concepts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-envelope"></i> Get in Touch</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <h3>Let's build something great.</h3>
+            <p>I'm always open to discussing new projects, opportunities, or partnerships. Feel free to reach out!</p>
+            <div class="contact-methods">
+              <a href="mailto:malotaphuti@gmail.com" class="contact-method glass-card">
+                <div class="contact-method-icon gradient-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="contact-method-label">Email</span>
+                  <span class="contact-method-value">malotaphuti@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/" target="_blank" class="contact-method glass-card">
+                <div class="contact-method-icon gradient-icon">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <span class="contact-method-label">LinkedIn</span>
+                  <span class="contact-method-value">Phuti S Malota</span>
+                </div>
+              </a>
+              <a href="https://github.com/malotaphuti" target="_blank" class="contact-method glass-card">
+                <div class="contact-method-icon gradient-icon">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <span class="contact-method-label">GitHub</span>
+                  <span class="contact-method-value">malotaphuti</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-form-wrapper reveal-right">
+            <form class="contact-form glass-card" id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="#" class="footer-logo">PM<span class="accent-dot">.</span></a>
+            <p>Graduate Software Developer crafting digital experiences.</p>
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/phuti-s-malota-8595a5315/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/malotaphuti" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:malotaphuti@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Phuti Malota. All rights reserved.</p>
+          <p class="footer-credit">Designed & Built with <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
   </body>
 </html>
