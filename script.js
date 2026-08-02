@@ -158,9 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Full-Stack Applications',
     'Cloud Solutions on Azure',
     'Data-Driven Dashboards',
-    'Machine Learning Models',
-    'Scalable REST APIs',
-    'Angular & Spring Boot Apps'
+    'Machine Learning Models'
   ];
   let phraseIndex = 0;
   let charIndex = 0;
