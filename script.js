@@ -524,27 +524,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // === CONTACT FORM HANDLING ===
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
+
       const btn = this.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
-      
+
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
       btn.disabled = true;
 
-      // Simulate form submission (replace with actual endpoint)
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-        btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+          btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+          contactForm.reset();
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Failed — Try Again';
+        btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.background = '';
           btn.disabled = false;
-          contactForm.reset();
         }, 3000);
-      }, 1500);
+      }
     });
   }
 
